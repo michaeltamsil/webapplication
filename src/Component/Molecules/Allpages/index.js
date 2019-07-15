@@ -34,15 +34,12 @@ export default class Allpages extends Component {
       <header >
         <Navbar>
 
-          <Button outline color="primary" block>
         <h2 color="primary">RiverWebBase</h2>
-        </Button>
+
         </Navbar>
         <Container className="text-center mt-4 mb-4">
         <Game/>
-        <Popup trigger={<Button>:</Button>} position="center">
-          <div>let's test it</div>
-        </Popup>
+       
           <h1 className="mt-4 mb-4">Web Application</h1>
         <iframe width="100%" height="450" frameborder="0" src="https://riverweather.netlify.com"></iframe>
           <Button color="success" onClick={this.toggle} className="mt-4" ><h4>Start</h4></Button>{' '}

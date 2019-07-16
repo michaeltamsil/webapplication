@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Nav, NavItem, NavLxink} from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Nav, NavItem, Container} from 'reactstrap'
 import {HashRouter,NavLink, Route,Switch} from 'react-router-dom'
 import Secondpages from '.'
+import Game from './../../Atom/Game'
 export default class secondpages extends Component {
    constructor(props) {
     super(props);
@@ -31,7 +32,9 @@ export default class secondpages extends Component {
   return (
     <div className="App">
       <header className="App-header">
-        
+      <Container className="text-center mt-4 mb-4">
+        <Game/>
+        </Container>
       </header>
     </div>
    );

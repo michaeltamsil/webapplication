@@ -11,8 +11,10 @@
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
     "react-loading-screen": "0.0.17",
+    "react-responsive-music-player": "^0.4.3",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-sound": "^1.2.0",
     "reactjs-popup": "^1.4.1",
     "reactstrap": "^8.0.0"
   },

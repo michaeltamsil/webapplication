@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Navbar, Container, Card, Row, Col} from 'reactstrap'
 import Game from './../../Atom/Game'
 import Popup from 'reactjs-popup'
+import {TiAdjustBrightness} from 'react-icons/ti'
 export default class Allpages extends Component {
    constructor(props) {
     super(props);
@@ -35,6 +36,7 @@ export default class Allpages extends Component {
         <Navbar>
 
         <h2 color="primary">RiverWebBase</h2>
+          <Button><TiAdjustBrightness/></Button>
 
         </Navbar>
         <Container className="text-center mt-4 mb-4">

@@ -34,7 +34,6 @@ export default class Mainpages extends Component {
       <header className="App-header">
         <HashRouter>
         <h1>RiverWebBase</h1>
-          
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
               <ModalHeader toggle={this.toggle}>Start?</ModalHeader>
               <ModalBody>

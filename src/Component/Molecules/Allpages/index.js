@@ -2,7 +2,12 @@ import React,{Component} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Navbar, Container, Card, Row, Col} from 'reactstrap'
 import Game from './../../Atom/Game'
 import Popup from 'reactjs-popup'
+import SideNav, {Toggle, Nav, NavItem, NavIcon, NavText} from '@trendmicro/react-sidenav'
+import '@trendmicro/react-sidenav/dist/react-sidenav.css'
+import {FaHome, FaGamepad} from 'react-icons/fa'
+import {MdApps, MdMusicNote} from 'react-icons/md'
 import {TiAdjustBrightness} from 'react-icons/ti'
+import {GoGear} from 'react-icons/go'
 export default class Allpages extends Component {
    constructor(props) {
     super(props);
@@ -33,11 +38,77 @@ export default class Allpages extends Component {
     
     <div >
       <header >
-        <Navbar>
+        
+        <SideNav 
+        
+        
+        >
+          <SideNav.Toggle/>
+          <SideNav.Nav defaultSelected="home">
+        <NavItem eventKey="home">
+            <NavIcon >
+              <h2>
+                <FaHome/>
+              </h2>
+            </NavIcon>
+            <NavText>
+                Home
+            </NavText>
+        </NavItem>
+        <NavItem eventKey="Game">
+            <NavIcon>
+              <h2>
+                <FaGamepad/>
+              </h2>
+            </NavIcon>
+            <NavText>
+                Game
+            </NavText>
+        </NavItem>
+        <NavItem eventKey="MdApps">
+            <NavIcon>
+              <h2>
+                <MdApps/>
+              </h2>
+            </NavIcon>
+            <NavText>
+                Application
+            </NavText>
+            
+        </NavItem>
+        
+        <NavItem eventKey="MdMusicNote">
+            <NavIcon>
+              <h2>
+                <MdMusicNote/>
+              </h2>
+            </NavIcon>
+            <NavText>
+              Music
+            </NavText>
+            
+        </NavItem>
+        
+        <NavItem eventKey="GoGear">
+            <NavIcon>
+              <h2>
+                <GoGear/>
+              </h2>
+            </NavIcon>
+            <NavText>
+                Settings
+            </NavText>
+            
+        </NavItem>
+          </SideNav.Nav>
 
+        </SideNav>
+        
+        <Navbar>
+<Container className="mt-4">
         <h2 color="primary">RiverWebBase</h2>
           <Button><TiAdjustBrightness/></Button>
-
+          </Container>
         </Navbar>
         <Container className="text-center mt-4 mb-4">
         <Game/>

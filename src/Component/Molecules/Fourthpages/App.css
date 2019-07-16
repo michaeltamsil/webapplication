@@ -35,3 +35,7 @@
 div.spin{
   transation-duration:5s;
 }
+body {
+  background-color: var(--background);
+  color: var(--text);
+}

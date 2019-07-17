@@ -1,11 +1,13 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './App.css';
-import {Form, Input, Button} from 'reactstrap'
 import Allpages from './Component/Molecules/Allpages'
-function App() {
+export default class riverwebbase extends Component{
+  render(){
   return (
+    <div>
     <Allpages/>
+    </div>
   );
 }
+}
 
-export default App;

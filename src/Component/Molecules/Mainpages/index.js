@@ -35,9 +35,9 @@ export default class Mainpages extends Component {
         <HashRouter>
         <h1>RiverWebBase</h1>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-              <ModalHeader toggle={this.toggle}>Start?</ModalHeader>
+              <ModalHeader toggle={this.toggle}>Login?</ModalHeader>
               <ModalBody>
-                  Start the RiverWebBase
+                  login to the RiverWebBase??
               </ModalBody>
               <ModalFooter>
               <NavLink href="./../Allpages/index.js">
@@ -57,7 +57,7 @@ export default class Mainpages extends Component {
             <FormGroup>
               <Input type="password" name="password" id="password" placeholder="password"/>
             </FormGroup>
-            <Button color="success" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h1>{this.props.buttonLabel}Start</h1></Button>{' '}
+            <Button color="primary" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h5>{this.props.buttonLabel}Login</h5></Button>{' '}
           </Form>
       </header>
     </div>

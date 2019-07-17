@@ -121,7 +121,7 @@ export default class Allpages extends Component {
         </SideNav>
         
         <Navbar>
-        <Container className="mt-4">
+        <Container className="mt-4" outline color="primary">
         <h2>RiverWebBase</h2>
         </Container>
         </Navbar>

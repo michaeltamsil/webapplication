@@ -3,22 +3,30 @@ import './App.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Nav, NavItem, NavLxink} from 'reactstrap'
 import {HashRouter,NavLink, Route,Switch} from 'react-router-dom'
 import AllPages from './../Allpages'
+import { Redirect } from 'react-router';
 export default class Mainpages extends Component {
    constructor(props) {
     super(props);
     this.state = {
       modal: false,
-      backdrop: true
+      backdrop: true,
+      isLogin: false
     };
 
-    this.toggle = this.toggle.bind(this);
     this.changeBackdrop = this.changeBackdrop.bind(this);
   }
 
-  toggle() {
+  toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
+  }
+
+  success = () => {
+    this.setState({
+      modal: false,
+      isLogin: true
+    })
   }
 
   changeBackdrop(e) {
@@ -29,6 +37,11 @@ export default class Mainpages extends Component {
     this.setState({ backdrop: value });
   }
   render(){
+    let goToLoading = '';
+    if (this.state.isLogin){
+      goToLoading = <Redirect to="/loading"/>;
+    }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -41,7 +54,7 @@ export default class Mainpages extends Component {
               </ModalBody>
               <ModalFooter>
               <NavLink href="./../Allpages/index.js">
-                  <Button color="primary" onClick={this.toggle}>OK</Button>
+                  <Button color="primary" onClick={this.success}>OK</Button>
                   </NavLink>
                   <Button color="danger" onClick={this.toggle}>Cancel</Button>
               </ModalFooter>
@@ -52,14 +65,15 @@ export default class Mainpages extends Component {
           </HashRouter>
           <Form>
             <FormGroup>
-              <Input type="email" name="email" id ="email" placeholder="E-mail"/>
+              <Input type="email" name="email" id ="email" placeholder="E-mail" required/>
             </FormGroup>
             <FormGroup>
-              <Input type="password" name="password" id="password" placeholder="password"/>
+              <Input type="password" name="password" id="password" placeholder="password" required/>
             </FormGroup>
             <Button color="primary" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h5>{this.props.buttonLabel}Login</h5></Button>{' '}
           </Form>
       </header>
+      { goToLoading }
     </div>
    );
  }

@@ -17,10 +17,12 @@ import Popup from 'reactjs-popup'
 import { Switch, NavLink, Route} from 'react-router-dom'
 import SideNav, {NavItem, NavIcon, NavText} from '@trendmicro/react-sidenav'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
-import {FaHome, FaGamepad} from 'react-icons/fa'
-import {MdApps, MdMusicNote} from 'react-icons/md'
+import {FaHome, FaGamepad, FaVideo} from 'react-icons/fa'
+import {MdApps, MdMusicNote,MdFeedback} from 'react-icons/md'
 import {TiAdjustBrightness} from 'react-icons/ti'
 import {GoGear} from 'react-icons/go'
+import Video from './../Video'
+import Feedback from './../Feedback'
 import Secondpages from '../Secondpages';
 import Firstpages from './../Firstpages'
 import Thirdpages from './../ThirdPages'
@@ -119,6 +121,30 @@ export default class Allpages extends Component {
 
                             </NavItem>
 
+                            <NavItem eventKey="FaVideo">
+                                <NavIcon>
+                                    <NavLink to="/Video">
+                                        <h2>
+                                            <FaVideo/>
+                                        </h2>
+                                    </NavLink>
+                                </NavIcon>
+                                <NavText>
+                                    Video
+                                </NavText>
+                            </NavItem>
+                            <NavItem eventKey="MdFeedback">
+                                <NavIcon>
+                                    <NavLink to="/Feedback">
+                                        <h2>
+                                            <MdFeedback/>
+                                        </h2>
+                                    </NavLink>
+                                </NavIcon>
+                                <NavText>
+                                    Feedback
+                                </NavText>
+                            </NavItem>
                             <NavItem eventKey="GoGear">
                                 <NavIcon>
                                     <NavLink to="Settings">
@@ -149,6 +175,8 @@ export default class Allpages extends Component {
                             <Route exact path="/Game" component={Game}/>
                             <Route exact path="/Application" component={Thirdpages}/>
                             <Route exact path="/Music" component={Musicpages}/>
+                            <Route exact path="/Video" component={Video}/>
+                            <Route exact path="/Feedback" component={Feedback}/>
                             <Route exact path="/Settings" component={Fourthpages}/>
                         </Switch>
                     </Container>

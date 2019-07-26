@@ -31,9 +31,10 @@ export default class musicpages extends Component {
         title:'Unravel',
         artist:['TK']
   }]
-  return (
+  return (<div><h1 className="text-center">Music</h1>
       <Row><Col sm="12" md={{ size: 8, offset: 3 }}>
     <div className="text-center">
+    
     <MusicPlayer playlist={playlist} />
     <br/>
     <br/>
@@ -43,6 +44,7 @@ export default class musicpages extends Component {
     <MusicPlayer playlist={playlist2} />
     </div>
     </Col></Row>
+    </div>
    );
  }
 }

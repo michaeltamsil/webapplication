@@ -30,6 +30,7 @@ export default class video extends Component {
   return (
     <div className="App">
       <Container className="text-center mt-4 mb-4">
+        <h1>Video</h1>
         <iframe width="727" height="409" src="https://www.youtube.com/embed/PELys8li6lY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
         </Container>

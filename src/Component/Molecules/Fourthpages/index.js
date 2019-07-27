@@ -20,7 +20,7 @@ export default class fourthpages extends Component {
     super();
  
     this.state = {
-      rating: 1
+      rating: 0
     };
   }
  
@@ -32,7 +32,7 @@ export default class fourthpages extends Component {
     
     const { rating } = this.state;
   return (
-    <div className="text-center"><h2>Rating from state: {rating}</h2>
+    <div className="text-center"><h2>Rating: {rating}</h2>
     <h1>
     <StarRatingComponent 
       name="rate1" 

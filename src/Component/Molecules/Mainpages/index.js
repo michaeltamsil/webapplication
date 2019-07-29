@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import './App.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Nav, NavItem, NavLxink} from 'reactstrap'
-import {HashRouter,NavLink, Route,Switch} from 'react-router-dom'
+import {HashRouter,NavLink, Route,Switch, Link} from 'react-router-dom'
 import AllPages from './../Allpages'
+import Register from './../Register'
 import { Redirect } from 'react-router';
 export default class Mainpages extends Component {
    constructor(props) {
@@ -10,8 +11,7 @@ export default class Mainpages extends Component {
     this.state = {
       modal: false,
       backdrop: true,
-      isLogin: false,
-      isRegis:false
+      isLogin: false
     };
 
     this.changeBackdrop = this.changeBackdrop.bind(this);
@@ -48,10 +48,6 @@ export default class Mainpages extends Component {
     if (this.state.isLogin){
       goToLoading = <Redirect to="/loading"/>;
     }
-    let gotoRegis = '';
-    if(this.state.isRegis){
-      gotoRegis = <Redirect to="/register"/>;
-    }
 
   return (
     <div className="App">
@@ -82,11 +78,10 @@ export default class Mainpages extends Component {
               <Input type="password" name="password" id="password" placeholder="password" required/>
             </FormGroup>
             <Button color="primary" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h5>{this.props.buttonLabel}Login</h5></Button>{' '}
-            <Button color="success" className="mt-4" onClick={this.registers} style={{borderRadius: 3}}><h5>Register</h5></Button>
+            <Link to="/Register"><Button color="success" className="mt-4" style={{borderRadius: 3}}><h5>Register</h5></Button></Link>
           </Form>
       </header>
       { goToLoading }
-      {gotoRegis}
     </div>
    );
  }

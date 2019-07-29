@@ -5,44 +5,8 @@ import {HashRouter,NavLink, Route,Switch} from 'react-router-dom'
 import AllPages from './../Allpages'
 import { Redirect } from 'react-router';
 export default class register extends Component {
-   constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-      backdrop: true,
-      isLogin: false,
-      isRegis:false
-    };
-
-    this.changeBackdrop = this.changeBackdrop.bind(this);
-  }
-
-  toggle = () => {
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
-  }
-
-  success = () => {
-    this.setState({
-      modal: false,
-      isLogin: true
-    })
-  }
-
-  changeBackdrop(e) {
-    let value = e.target.value;
-    if (value !== 'static') {
-      value = JSON.parse(value);
-    }
-    this.setState({ backdrop: value });
-  }
-  render(){
-    let goToLogin = '';
-    if (this.state.isLoginpages){
-      goToLogin = <Redirect to="/Mainpages"/>;
-    }
-
+ 
+render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -60,7 +24,7 @@ export default class register extends Component {
             <Button color="primary" className="mt-4" onClick={this.success} style={{ borderRadius: 3}}><h5>confirm</h5></Button>{' '}
           </Form>
       </header>
-      { goToLogin }
+ 
     </div>
    );
  }

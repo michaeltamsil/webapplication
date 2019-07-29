@@ -30,6 +30,12 @@ export default class Mainpages extends Component {
     })
   }
 
+  registers = () => {
+    this.setState({
+      modal: false,
+      isRegis: true
+    })
+  }
   changeBackdrop(e) {
     let value = e.target.value;
     if (value !== 'static') {
@@ -42,9 +48,9 @@ export default class Mainpages extends Component {
     if (this.state.isLogin){
       goToLoading = <Redirect to="/loading"/>;
     }
-    let gotoregis = '';
-    if(this.state.isregis){
-      gotoregis = <Redirect to="/register"/>;
+    let gotoRegis = '';
+    if(this.state.isRegis){
+      gotoRegis = <Redirect to="/register"/>;
     }
 
   return (
@@ -76,10 +82,11 @@ export default class Mainpages extends Component {
               <Input type="password" name="password" id="password" placeholder="password" required/>
             </FormGroup>
             <Button color="primary" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h5>{this.props.buttonLabel}Login</h5></Button>{' '}
-            <Button color="success" className="mt-4" style={{borderRAdius: 3}}><h5>Register</h5></Button>
+            <Button color="success" className="mt-4" onClick={this.registers} style={{borderRadius: 3}}><h5>Register</h5></Button>
           </Form>
       </header>
       { goToLoading }
+      {gotoRegis}
     </div>
    );
  }

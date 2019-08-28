@@ -4,7 +4,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, In
 import {HashRouter,NavLink, Route,Switch} from 'react-router-dom'
 import AllPages from './../Allpages'
 import { Redirect } from 'react-router';
-export default class Mainpages extends Component {
+export default class register extends Component {
    constructor(props) {
     super(props);
     this.state = {
@@ -42,31 +42,13 @@ export default class Mainpages extends Component {
     if (this.state.isLoginpages){
       goToLogin = <Redirect to="/Mainpages"/>;
     }
-    let gotoRegis = '';
-    if(this.state.isRegis){
-      gotoRegis = <Redirect to="/register"/>;
-    }
 
   return (
     <div className="App">
       <header className="App-header">
         <HashRouter>
         <h1>RiverWebBase</h1>
-          <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-              <ModalHeader toggle={this.toggle}>Login?</ModalHeader>
-              <ModalBody>
-                  login to the RiverWebBase??
-              </ModalBody>
-              <ModalFooter>
-              <NavLink href="./../Allpages/index.js">
-                  <Button color="primary" onClick={this.success} required>OK</Button>
-                  </NavLink>
-                  <Button color="danger" onClick={this.toggle}>Cancel</Button>
-              </ModalFooter>
-          </Modal>
-          <Switch>
-              <Route exact path="/Allpages" component={AllPages}/>
-          </Switch>
+        
           </HashRouter>
           <Form method="POST">
             <FormGroup>
@@ -75,12 +57,10 @@ export default class Mainpages extends Component {
             <FormGroup>
               <Input type="password" name="password" id="password" placeholder="password" required/>
             </FormGroup>
-            <Button color="primary" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h5>{this.props.buttonLabel}Login</h5></Button>{' '}
-            <Button color="success" className="mt-4" style={{borderRadius: 3}}><h5>Register</h5></Button>
+            <Button color="primary" className="mt-4" onClick={this.success} style={{ borderRadius: 3}}><h5>confirm</h5></Button>{' '}
           </Form>
       </header>
       { goToLogin }
-      { gotoRegis }
     </div>
    );
  }

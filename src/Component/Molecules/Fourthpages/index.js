@@ -40,26 +40,10 @@ export default class fourthpages extends Component {
       value={rating}
       onStarClick={this.onStarClick.bind(this)}
     /></h1>
-       <ImageUploader
-                withIcon={true}
-                buttonText='Choose images'
-                onChange={this.onDrop}
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                maxFileSize={5242880}
-            />
+  
       <Row><Col>
       <div >
-      <h5> Website Theme   </h5>
-      </div>
-      </Col>
-      <Col>
-      <DarkTheme light={lightTheme} dark={darkTheme}/>
-      </Col>
-      </Row>
-      <Row>
-      <Col>
-      <div >
-      <h5> Website Theme   </h5>
+      <h5> Dark Theme   </h5>
       </div>
       </Col>
       <Col>

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Nav, NavItem} from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input, Nav, NavItem, NavLxink} from 'reactstrap'
 import {HashRouter,NavLink, Route,Switch} from 'react-router-dom'
 import AllPages from './../Allpages'
 import { Redirect } from 'react-router';
@@ -42,9 +42,9 @@ export default class Mainpages extends Component {
     if (this.state.isLogin){
       goToLoading = <Redirect to="/loading"/>;
     }
-    let gotoRegis = '';
-    if(this.state.isRegis){
-      gotoRegis = <Redirect to="/register"/>;
+    let gotoregis = '';
+    if(this.state.isregis){
+      gotoregis = <Redirect to="/register"/>;
     }
 
   return (
@@ -76,11 +76,10 @@ export default class Mainpages extends Component {
               <Input type="password" name="password" id="password" placeholder="password" required/>
             </FormGroup>
             <Button color="primary" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h5>{this.props.buttonLabel}Login</h5></Button>{' '}
-            <Button color="success" className="mt-4" style={{borderRadius: 3}}><h5>Register</h5></Button>
+            <Button color="success" className="mt-4" style={{borderRAdius: 3}}><h5>Register</h5></Button>
           </Form>
       </header>
       { goToLoading }
-      { gotoRegis }
     </div>
    );
  }

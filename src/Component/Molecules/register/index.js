@@ -38,9 +38,9 @@ export default class Mainpages extends Component {
     this.setState({ backdrop: value });
   }
   render(){
-    let goToLoading = '';
-    if (this.state.isLogin){
-      goToLoading = <Redirect to="/loading"/>;
+    let goToLogin = '';
+    if (this.state.isLoginpages){
+      goToLogin = <Redirect to="/Mainpages"/>;
     }
     let gotoRegis = '';
     if(this.state.isRegis){
@@ -79,7 +79,7 @@ export default class Mainpages extends Component {
             <Button color="success" className="mt-4" style={{borderRadius: 3}}><h5>Register</h5></Button>
           </Form>
       </header>
-      { goToLoading }
+      { goToLogin }
       { gotoRegis }
     </div>
    );

@@ -14,7 +14,7 @@ export default class loadingpages extends Component {
       this.setState({
         redirect: true
       })
-    }, 3000)
+    }, 2000)
   }
   render(){
     let tagHtml = '';

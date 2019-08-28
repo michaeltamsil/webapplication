@@ -10,7 +10,8 @@ export default class Mainpages extends Component {
     this.state = {
       modal: false,
       backdrop: true,
-      isLogin: false
+      isLogin: false,
+      isRegis:false
     };
 
     this.changeBackdrop = this.changeBackdrop.bind(this);
@@ -41,6 +42,10 @@ export default class Mainpages extends Component {
     if (this.state.isLogin){
       goToLoading = <Redirect to="/loading"/>;
     }
+    let gotoregis = '';
+    if(this.state.isregis){
+      gotoregis = <Redirect to="/register"/>;
+    }
 
   return (
     <div className="App">
@@ -54,7 +59,7 @@ export default class Mainpages extends Component {
               </ModalBody>
               <ModalFooter>
               <NavLink href="./../Allpages/index.js">
-                  <Button color="primary" onClick={this.success}>OK</Button>
+                  <Button color="primary" onClick={this.success} required>OK</Button>
                   </NavLink>
                   <Button color="danger" onClick={this.toggle}>Cancel</Button>
               </ModalFooter>
@@ -63,7 +68,7 @@ export default class Mainpages extends Component {
               <Route exact path="/Allpages" component={AllPages}/>
           </Switch>
           </HashRouter>
-          <Form>
+          <Form method="POST">
             <FormGroup>
               <Input type="email" name="email" id ="email" placeholder="E-mail" required/>
             </FormGroup>
@@ -71,6 +76,7 @@ export default class Mainpages extends Component {
               <Input type="password" name="password" id="password" placeholder="password" required/>
             </FormGroup>
             <Button color="primary" onClick={this.toggle} className="mt-4" style={{ borderRadius: 3}}><h5>{this.props.buttonLabel}Login</h5></Button>{' '}
+            <Button color="success" className="mt-4" style={{borderRAdius: 3}}><h5>Register</h5></Button>
           </Form>
       </header>
       { goToLoading }
